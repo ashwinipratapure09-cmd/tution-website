@@ -1,90 +1,92 @@
+
 <!DOCTYPE html>
-<html><head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ONE SMART LIFE</title>
 <style>
-body{margin:0;font-family:Arial;background:#6a0dad;color:white;text-align:center;padding:12px}
-.box{background:white;color:#333;border-radius:20px;padding:18px;margin:14px 0}
-h1{font-size:30px;margin:5px}
-.sos{background:red;color:white;font-size:28px;padding:18px;border:none;border-radius:50px;width:100%;font-weight:bold}
-.btn{background:#6a0dad;color:white;padding:14px;border:none;border-radius:14px;width:100%;margin:7px 0;font-size:17px;font-weight:bold}
-input,select,textarea{width:94%;padding:12px;margin:7px 0;border:2px solid #ddd;border-radius:10px;font-size:15px}
-.langbtn{background:white;color:#6a0dad;border:2px solid #6a0dad;padding:8px 10px;margin:3px;border-radius:20px;font-weight:bold}
-.langbox{background:white;border-radius:15px;padding:10px;margin-bottom:5px}
-.green{background:#25D366}.blue{background:#007bff}.orange{background:#ff6600}.red{background:red}
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0;background:#7b1fa2;padding:12px}
+h1{text-align:center;color:white;margin:5px 0;font-size:28px}
+.sub{text-align:center;color:white;font-size:14px;line-height:1.5}
+.card{background:white;border-radius:16px;padding:16px;margin:14px 0}
+.lang-title{text-align:center;font-weight:bold;font-size:18px}
+.langs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px}
+.langs button{padding:8px 14px;border:2px solid #7b1fa2;border-radius:20px;background:white;color:#7b1fa2;font-weight:bold;cursor:pointer}
+.langs button.active{background:#7b1fa2;color:white}
+h2{text-align:center;color:#d32f2f;margin:5px 0}
+p{text-align:center}
+.sos{background:#e53935;color:white;border:none;width:100%;padding:16px;font-size:20px;font-weight:bold;border-radius:12px;cursor:pointer}
+.btn{width:100%;padding:14px;border:none;border-radius:10px;color:white;font-size:16px;font-weight:bold;margin-top:10px;cursor:pointer;display:block;text-align:center;text-decoration:none}
+.green{background:#2ecc71}.blue{background:#2196f3}.orange{background:#ff6d00}
 </style>
-</head><body>
-
+</head>
+<body>
 <h1>ONE SMART LIFE</h1>
-<p id="tag1">One App. Every Problem. Smarter Solutions.</p>
-<p id="tag2">One World. One Company. One Smarter Life.</p>
+<div class="sub" id="t1">One App. Every Problem. Smarter Solutions.<br>One World. One Company. One Smarter Life.</div>
 
-<div class="langbox">
-<p style="color:black;margin:5px"><b>🌍 Language / भाषा / భాష</b></p>
-<button class="langbtn" onclick="setLang('en')">English</button>
-<button class="langbtn" onclick="setLang('hi')">हिंदी</button>
-<button class="langbtn" onclick="setLang('te')">తెలుగు</button>
-<button class="langbtn" onclick="setLang('ta')">தமிழ்</button>
-<button class="langbtn" onclick="setLang('kn')">ಕನ್ನಡ</button>
-<button class="langbtn" onclick="setLang('mr')">मराठी</button>
+<div class="card">
+<div class="lang-title">🌍 <span id="langLabel">Language / भाषा</span></div>
+<div class="langs" id="langBtns"></div>
 </div>
 
-<div class="box">
-<h2 id="t1" style="color:red">🚨 WOMEN'S SAFETY - SABSE JARURI</h2>
-<p id="t2">Ek Ladki Safe Hai To Poora Parivaar Safe Hai</p>
-<button class="sos" id="sosBtn" onclick="alert('SOS SENT! Police & Family Ko Location Gayi!')">🆘 SOS - HELP!</button>
-<p id="t3">Tap karte hi Police + Family ko Location jayegi</p>
-<button class="btn green" id="b1">📞 Call Police - 112</button>
-<button class="btn blue" id="b2">📞 Women Helpline - 181</button>
-<button class="btn orange" id="b3">📍 Share My Live Location</button>
+<div class="card">
+<h2>🚨 <span id="wTitle">WOMEN'S SAFETY - SABSE JARURI</span></h2>
+<p id="wSub">Ek Ladki Safe Hai To Poora Parivaar Safe Hai</p>
+<button class="sos" onclick="sos()">🆘 <span id="sosTxt">SOS - HELP!</span></button>
+<p id="sosSub">Tap karte hi Police + Family ko Location jayegi</p>
+<a class="btn green" href="tel:112">📞 <span id="policeTxt">Call Police - 112</span></a>
+<a class="btn blue" href="tel:181">📞 <span id="womenTxt">Women Helpline - 181</span></a>
+<a class="btn orange" href="#" onclick="shareLoc()">📍 <span id="locTxt">Share My Live Location</span></a>
 </div>
-
-<div class="box">
-<h2 id="t4">🚑 ACCIDENT & EMERGENCY</h2>
-<p id="t5">1 Minute Bhi Zindagi Bachata Hai</p>
-<button class="btn red" id="b4">🚑 Ambulance - 108</button>
-<button class="btn blue" id="b5">🏥 Nearest Hospital</button>
-<button class="btn orange" id="b6">🔥 Fire - 101</button>
-<input id="in1" placeholder="Apna Naam">
-<input id="in2" placeholder="Phone Number">
-<textarea id="in3" placeholder="Kya hua? Kaha hua? Likho..."></textarea>
-<button class="btn green" id="b7">SEND EMERGENCY REPORT</button>
-</div>
-
-<div class="box">
-<h2 id="t6">👧 CHILD SAFETY</h2>
-<p id="t7">Safe People Awareness</p>
-<button class="btn" id="b8">Report Unsafe Person</button>
-<button class="btn" id="b9">Child Helpline - 1098</button>
-</div>
-
-<div class="box">
-<h2 id="t8">🌾 AANE WALA HAI - NEXT 40 SERVICES</h2>
-<p>✅ Farmer - Fake Seed Verification</p>
-<p>✅ Food Support - Save Food, Feed People</p>
-<p>✅ Education & Jobs</p>
-<p>✅ Roads & Garbage</p>
-<p>✅ Aur 38 Services...</p>
-<p><b>TOTAL 43 SERVICES - Ek Hi App Me!</b></p>
-</div>
-
-<p>© ONE SMART LIFE - One World. One Company.</p>
 
 <script>
-var T={
-en:{tag1:"One App. Every Problem. Smarter Solutions.",tag2:"One World. One Company. One Smarter Life.",t1:"🚨 WOMEN'S SAFETY - MOST IMPORTANT",t2:"If One Girl Is Safe, Whole Family Is Safe",t3:"On Tap, Location Goes To Police + Family",b1:"📞 Call Police - 112",b2:"📞 Women Helpline - 181",b3:"📍 Share My Live Location",t4:"🚑 ACCIDENT & EMERGENCY",t5:"1 Minute Can Also Save A Life",b4:"🚑 Ambulance - 108",b5:"🏥 Nearest Hospital",b6:"🔥 Fire - 101",b7:"SEND EMERGENCY REPORT",t6:"👧 CHILD SAFETY",t7:"Safe People Awareness",b8:"Report Unsafe Person",b9:"Child Helpline - 1098",t8:"🌾 COMING SOON - NEXT 40 SERVICES",sosBtn:"🆘 SOS - HELP!",in1:"Your Name",in2:"Phone Number",in3:"What happened? Where? Write..."},
-hi:{tag1:"Ek App. Har Samasya. Smart Samadhan.",tag2:"Ek Duniya. Ek Company. Ek Smart Zindagi.",t1:"🚨 MAHILA SURAKSHA - SABSE JARURI",t2:"Ek Ladki Safe Hai To Poora Parivaar Safe Hai",t3:"Tap Karte Hi Police + Family Ko Location Jayegi",b1:"📞 Police Ko Call Karo - 112",b2:"📞 Mahila Helpline - 181",b3:"📍 Meri Live Location Bhejo",t4:"🚑 DURGHATNA & EMERGENCY",t5:"1 Minute Bhi Zindagi Bacha Sakta Hai",b4:"🚑 Ambulance - 108",b5:"🏥 Nazdeeki Hospital",b6:"🔥 Fire - 101",b7:"EMERGENCY REPORT BHEJO",t6:"👧 BACHHO KI SURAKSHA",t7:"Safe Logon Ki Pehchan",b8:"Unsafe Vyakti Ki Report Karo",b9:"Bachho Ki Helpline - 1098",t8:"🌾 AANE WALA HAI - AGLE 40 SERVICES",sosBtn:"🆘 SOS - MADAD!",in1:"Apna Naam",in2:"Phone Number",in3:"Kya Hua? Kaha Hua? Likho..."},
-te:{tag1:"Oka App. Prati Samasya. Smart Pariskaram.",tag2:"Oka Prapancham. Oka Company. Oka Smart Jeevitam.",t1:"🚨 MAHILA BHADRATA - ATYANTA MUKHYAM",t2:"Oka Ammayi Safe Ga Unte, Kuthumbam Antha Safe",t3:"Tap Cheyagane Police + Family Ki Location Veltundi",b1:"📞 Police Ki Call Cheyandi - 112",b2:"📞 Mahila Helpline - 181",b3:"📍 Naa Live Location Pampandi",t4:"🚑 PRA MADAM & EMERGENCY",t5:"1 Nimisham Kuda Pranam Kapatagaladu",b4:"🚑 Ambulance - 108",b5:"🏥 Daggari Hospital",b6:"🔥 Fire - 101",b7:"EMERGENCY REPORT PAMPANDI",t6:"👧 PILLALA BHADRATA",t7:"Safe Manushula Gurinchi Telusukondi",b8:"Unsafe Manishi Gurinchi Report Cheyandi",b9:"Pillala Helpline - 1098",t8:"🌾 RAVABOTHUNDI - TARUVATA 40 SERVICES",sosBtn:"🆘 SOS - SAHAYAM!",in1:"Mee Peru",in2:"Phone Number",in3:"Em Jarigindi? Ekkada? Rayandi..."},
-ta:{tag1:"Oru App. Ella Prachanaigalum. Smart Theervu.",tag2:"Oru Ulagam. Oru Company. Oru Smart Vazhkai.",t1:"🚨 PENGAL PATHUKAPPU - MIGA MUKKIYAM",t2:"Oru Penn Safe Na, Kudumbam Muzhuvathum Safe",t3:"Tap Seithaal Police + Family Ku Location Pogum",b1:"📞 Police Ku Call - 112",b2:"📞 Pengal Helpline - 181",b3:"📍 En Live Location Anuppu",t4:"🚑 VIBATHU & EMERGENCY",t5:"1 Nimidam Kooda Uyirai Kappatralam",b4:"🚑 Ambulance - 108",b5:"🏥 Pakkathu Hospital",b6:"🔥 Fire - 101",b7:"EMERGENCY REPORT ANUPPU",t6:"👧 KUZHANTHAI PATHUKAPPU",t7:"Safe Makkal Patri Therinthu Kol",b8:"Unsafe Nabar Patri Report Sei",b9:"Kuzhanthai Helpline - 1098",t8:"🌾 VARAPOGIRATHU - ADUTHA 40 SERVICES",sosBtn:"🆘 SOS - UTHAVI!",in1:"Ungal Peyar",in2:"Phone Number",in3:"Enna Nachanthu? Enge? Ezhuthu..."},
-kn:{tag1:"Ondu App. Prati Samasye. Smart Parihara.",tag2:"Ondu Jaga. Ondu Company. Ondu Smart Jeevana.",t1:"🚨 MAHILA SURAKSHA - ATYANT MUKHYA",t2:"Obba Hudugi Safe Idre, Ida Kutumba Safe",t3:"Tap Madidare Police + Family Ge Location Hogutte",b1:"📞 Police Ge Call - 112",b2:"📞 Mahila Helpline - 181",b3:"📍 Nanna Live Location Kalu",t4:"🚑 APAGHATA & EMERGENCY",t5:"1 Nimisha Kuda Jeeva Ulisabahudu",b4:"🚑 Ambulance - 108",b5:"🏥 Hatrada Hospital",b6:"🔥 Fire - 101",b7:"EMERGENCY REPORT KALU",t6:"👧 MAKKALA SURAKSHA",t7:"Safe Janara Bagge Tiliyiri",b8:"Unsafe Vyaktina Report Madi",b9:"Makkala Helpline - 1098",t8:"🌾 BARUTTIDE - MUNDINA 40 SERVICES",sosBtn:"🆘 SOS - SAHAYA!",in1:"Nimma Hesaru",in2:"Phone Number",in3:"Enayitu? Ellide? Bari..."},
-mr:{tag1:"Ek App. Pratyek Samasya. Smart Upay.",tag2:"Ek Jag. Ek Company. Ek Smart Ayushya.",t1:"🚨 MAHILA SURAKSHA - SARVAT JARURI",t2:"Ek Mulgi Safe Asel Tar Akkha Kutumb Safe",t3:"Tap Kelyavar Police + Family La Location Jail",b1:"📞 Police La Call Kara - 112",b2:"📞 Mahila Helpline - 181",b3:"📍 Majhi Live Location Pathva",t4:"🚑 APGHAT & EMERGENCY",t5:"1 Minute Suddha Jeev Vachvu Shakto",b4:"🚑 Ambulance - 108",b5:"🏥 Jawalche Hospital",b6:"🔥 Fire - 101",b7:"EMERGENCY REPORT PATHVA",t6:"👧 MULANCHI SURAKSHA",t7:"Safe Lokanchi Olakh",b8:"Unsafe Vyaktichi Takrar Kara",b9:"Mulanchi Helpline - 1098",t8:"🌾 YET AAHE - PUDHIL 40 SERVICES",sosBtn:"🆘 SOS - MADAT!",in1:"Tumche Naav",in2:"Phone Number",in3:"Kay Jhal? Kuthe? Liha..."}
+const T={
+en:{label:"Language",w:"WOMEN'S SAFETY - MOST IMPORTANT",ws:"If One Girl Is Safe, Whole Family Is Safe",sos:"SOS - HELP!",ss:"On tap, Location will go to Police + Family",p:"Call Police - 112",wo:"Women Helpline - 181",l:"Share My Live Location",name:"English"},
+hi:{label:"भाषा",w:"महिला सुरक्षा - सबसे ज़रूरी",ws:"एक लड़की सुरक्षित है तो पूरा परिवार सुरक्षित है",sos:"SOS - मदद!",ss:"दबाते ही पुलिस + परिवार को लोकेशन जाएगी",p:"पुलिस को कॉल करें - 112",wo:"महिला हेल्पलाइन - 181",l:"मेरी लाइव लोकेशन शेयर करें",name:"हिंदी"},
+te:{label:"భాష",w:"మహిళల భద్రత - అత్యంత ముఖ్యం",ws:"ఒక అమ్మాయి సురక్షితంగా ఉంటే మొత్తం కుటుంబం సురక్షితం",sos:"SOS - సహాయం!",ss:"నొక్కగానే పోలీస్ + కుటుంబానికి లొకేషన్ వెళ్తుంది",p:"పోలీస్ కి కాల్ - 112",wo:"మహిళా హెల్ప్‌లైన్ - 181",l:"నా లైవ్ లొకేషన్ షేర్ చేయండి",name:"తెలుగు"},
+ta:{label:"மொழி",w:"பெண்கள் பாதுகாப்பு - மிக முக்கியம்",ws:"ஒரு பெண் பாதுகாப்பாக இருந்தால் முழு குடும்பமும் பாதுகாப்பு",sos:"SOS - உதவி!",ss:"தட்டியதும் போலீஸ் + குடும்பத்திற்கு இடம் செல்லும்",p:"போலீஸ் அழைக்கவும் - 112",wo:"பெண்கள் உதவி எண் - 181",l:"என் நேரடி இடத்தை பகிரவும்",name:"தமிழ்"},
+kn:{label:"ಭಾಷೆ",w:"ಮಹಿಳಾ ಸುರಕ್ಷತೆ - ಅತ್ಯಂತ ಮುಖ್ಯ",ws:"ಒಬ್ಬ ಹುಡುಗಿ ಸುರಕ್ಷಿತವಾಗಿದ್ದರೆ ಇಡೀ ಕುಟುಂಬ ಸುರಕ್ಷಿತ",sos:"SOS - ಸಹಾಯ!",ss:"ಒತ್ತಿದ ತಕ್ಷಣ ಪೊಲೀಸ್ + ಕುಟುಂಬಕ್ಕೆ ಲೊಕೇಶನ್ ಹೋಗುತ್ತದೆ",p:"ಪೊಲೀಸ್‌ಗೆ ಕರೆ ಮಾಡಿ - 112",wo:"ಮಹಿಳಾ ಸಹಾಯವಾಣಿ - 181",l:"ನನ್ನ ಲೈವ್ ಲೊಕೇಶನ್ ಹಂಚಿಕೊಳ್ಳಿ",name:"ಕನ್ನಡ"},
+mr:{label:"भाषा",w:"महिला सुरक्षा - सर्वात महत्त्वाचे",ws:"एक मुलगी सुरक्षित तर संपूर्ण कुटुंब सुरक्षित",sos:"SOS - मदत!",ss:"दाबताच पोलीस + कुटुंबाला लोकेशन जाईल",p:"पोलिसांना कॉल करा - 112",wo:"महिला हेल्पलाइन - 181",l:"माझे लाईव्ह लोकेशन शेअर करा",name:"मराठी"},
+bn:{label:"ভাষা",w:"মহিলা নিরাপত্তা - সবচেয়ে জরুরি",ws:"একটি মেয়ে নিরাপদ থাকলে পুরো পরিবার নিরাপদ",sos:"SOS - সাহায্য!",ss:"ট্যাপ করলেই পুলিশ + পরিবারের কাছে লোকেশন যাবে",p:"পুলিশকে কল করুন - 112",wo:"মহিলা হেল্পলাইন - 181",l:"আমার লাইভ লোকেশন শেয়ার করুন",name:"বাংলা"},
+gu:{label:"ભાષા",w:"મહિલા સુરક્ષા - સૌથી જરૂરી",ws:"એક છોકરી સુરક્ષિત તો આખો પરિવાર સુરક્ષિત",sos:"SOS - મદદ!",ss:"દબાવતા જ પોલીસ + પરિવારને લોકેશન જશે",p:"પોલીસને કોલ કરો - 112",wo:"મહિલા હેલ્પલાઇન - 181",l:"મારું લાઇવ લોકેશન શેર કરો",name:"ગુજરાતી"},
+pa:{label:"ਭਾਸ਼ਾ",w:"ਔਰਤਾਂ ਦੀ ਸੁਰੱਖਿਆ - ਸਭ ਤੋਂ ਜ਼ਰੂਰੀ",ws:"ਇੱਕ ਕੁੜੀ ਸੁਰੱਖਿਅਤ ਹੈ ਤਾਂ ਪੂਰਾ ਪਰਿਵਾਰ ਸੁਰੱਖਿਅਤ ਹੈ",sos:"SOS - ਮਦਦ!",ss:"ਦਬਾਉਂਦੇ ਹੀ ਪੁਲਿਸ + ਪਰਿਵਾਰ ਨੂੰ ਲੋਕੇਸ਼ਨ ਜਾਵੇਗੀ",p:"ਪੁਲਿਸ ਨੂੰ ਕਾਲ ਕਰੋ - 112",wo:"ਮਹਿਲਾ ਹੈਲਪਲਾਈਨ - 181",l:"ਮੇਰੀ ਲਾਈਵ ਲੋਕੇਸ਼ਨ ਸਾਂਝੀ ਕਰੋ",name:"ਪੰਜਾਬੀ"},
+ml:{label:"ഭാഷ",w:"സ്ത്രീ സുരക്ഷ - ഏറ്റവും പ്രധാനം",ws:"ഒരു പെൺകുട്ടി സുരക്ഷിതയാണെങ്കിൽ മുഴുവൻ കുടുംബവും സുരക്ഷിതം",sos:"SOS - സഹായം!",ss:"ടാപ്പ് ചെയ്താൽ പോലീസ് + കുടുംബത്തിന് ലൊക്കേഷൻ പോകും",p:"പോലീസിനെ വിളിക്കുക - 112",wo:"വനിതാ ഹെൽപ്പ്‌ലൈൻ - 181",l:"എന്റെ ലൈവ് ലൊക്കേഷൻ പങ്കിടുക",name:"മലയാളം"},
+or:{label:"ଭାଷା",w:"ମହିଳା ସୁରକ୍ଷା - ସବୁଠାରୁ ଜରୁରୀ",ws:"ଜଣେ ଝିଅ ସୁରକ୍ଷିତ ଥିଲେ ପୁରା ପରିବାର ସୁରକ୍ଷିତ",sos:"SOS - ସାହାଯ୍ୟ!",ss:"ଦବାଇଲେ ପୋଲିସ + ପରିବାରକୁ ଲୋକେସନ ଯିବ",p:"ପୋଲିସକୁ କଲ କରନ୍ତୁ - 112",wo:"ମହିଳା ହେଲ୍ପଲାଇନ - 181",l:"ମୋ ଲାଇଭ ଲୋକେସନ ସେୟାର କରନ୍ତୁ",name:"ଓଡ଼ିଆ"},
+as:{label:"ভাষা",w:"মহিলা সুৰক্ষা - আটাইতকৈ জৰুৰী",ws:"এজনী ছোৱালী নিৰাপদ থাকিলে গোটেই পৰিয়াল নিৰাপদ",sos:"SOS - সহায়!",ss:"টিপিলেই আৰক্ষী + পৰিয়াললৈ লোকেচন যাব",p:"আৰক্ষীলৈ কল কৰক - 112",wo:"মহিলা হেল্পলাইন - 181",l:"মোৰ লাইভ লোকেচন শ্বেয়াৰ কৰক",name:"অসমীয়া"},
+ur:{label:"زبان",w:"خواتین کی حفاظت - سب سے ضروری",ws:"ایک لڑکی محفوظ ہے تو پورا خاندان محفوظ ہے",sos:"SOS - مدد!",ss:"دباتے ہی پولیس + خاندان کو لوکیشن جائے گی",p:"پولیس کو کال کریں - 112",wo:"خواتین ہیلپ لائن - 181",l:"میری لائیو لوکیشن شیئر کریں",name:"اردو"},
+ks:{label:"زَبان",w:"زَنانَن ہُنٛد حِفاظَت - سَبھ کھۄتہ ضۆروٗری",ws:"اَکھ کوٗر محفوٗظ چھِ تہٕ پوٗرٕ خاندان محفوٗظ",sos:"SOS - مَدَد!",ss:"دَباونہٕ سٟتؠ پولیس + خاندانس لوکیشَن گَژھِ",p:"پولیسَس کال کٔرِو - 112",wo:"زَنانَن ہیلپ لائن - 181",l:"میٲنؠ لٲیو لوکیشَن شیئر کٔرِو",name:"کٲشُر"},
+sd:{label:"ٻولي",w:"عورتن جي حفاظت - سڀ کان ضروري",ws:"هڪ ڇوڪري محفوظ آهي ته پورو خاندان محفوظ آهي",sos:"SOS - مدد!",ss:"دٻائڻ سان پوليس + خاندان ڏانهن لوڪيشن ويندي",p:"پوليس کي ڪال ڪريو - 112",wo:"عورتن جي هيلپ لائن - 181",l:"منهنجي لائيو لوڪيشن شيئر ڪريو",name:"سنڌي"},
+ne:{label:"भाषा",w:"महिला सुरक्षा - सबैभन्दा जरुरी",ws:"एक छोरी सुरक्षित भए पूरै परिवार सुरक्षित हुन्छ",sos:"SOS - मद्दत!",ss:"थिच्ने बित्तिकै प्रहरी + परिवारलाई लोकेशन जान्छ",p:"प्रहरीलाई कल गर्नुहोस् - 112",wo:"महिला हेल्पलाइन - 181",l:"मेरो लाइभ लोकेशन सेयर गर्नुहोस्",name:"नेपाली"},
+kok:{label:"भास",w:"बायलो सुरक्षा - सगळ्यांत म्हत्वाचें",ws:"एक चली सुरक्षित जाल्यार पुराय कुटुंब सुरक्षित",sos:"SOS - मदत!",ss:"दाबतकूच पुलिस + कुटुंबाक लोकेशन वतलें",p:"पुलिसाक कॉल करात - 112",wo:"बायलो हेल्पलाइन - 181",l:"म्हजें लायव्ह लोकेशन शेअर करात",name:"कोंकणी"},
+mni:{label:"লোন",w:"নুপীগী সুরক্ষা - খ্বাইদগী মরু ওইবা",ws:"নুপীমচা অমা সুরক্ষিত ওইরবদি পুম্বা ইমুং সুরক্ষিত ওই",sos:"SOS - মতেং!",ss:"নম্বদা পুলিস + ইমুংদা লোকেশন চৎকনি",p:"পুলিসতা কল তৌ - 112",wo:"নুপী হেল্পলাইন - 181",l:"ঐগী লাইভ লোকেশন শেয়ার তৌ",name:"মণিপুরী"},
+brx:{label:"राव",w:"आइजोफोरनि रैखाथि - बयनिख्रुइ गोनांथाव",ws:"सासे हिन्जाव रैखा जाब्ला गासै नखर रैखा",sos:"SOS - मदद!",ss:"थाब्दोब्ला पुलिस + नखराव लोकेशन थांनो",p:"पुलिसखौ कल खालाम - 112",wo:"आइजोफोर हेल्पलाइन - 181",l:"आंनि लाइभ लोकेशन शेयर खालाम",name:"बोड़ो"},
+doi:{label:"भाशा",w:"औरतें दी सुरक्षा - सब्भै शा जरूरी",ws:"इक कुड़ी सुरक्षित ऐ तां पूरा परिवार सुरक्षित ऐ",sos:"SOS - मदद!",ss:"दबांदे गै पुलिस + परिवार गी लोकेशन जाग",p:"पुलिस गी काल करो - 112",wo:"औरतें हेल्पलाइन - 181",l:"मेरी लाइव लोकेशन शेयर करो",name:"डोगरी"},
+mai:{label:"भाषा",w:"महिला सुरक्षा - सभ सँ जरुरी",ws:"एक बेटी सुरक्षित अछि तँ पूरा परिवार सुरक्षित अछि",sos:"SOS - मदद!",ss:"दबैते पुलिस + परिवार के लोकेशन जैत",p:"पुलिस के कॉल करू - 112",wo:"महिला हेल्पलाइन - 181",l:"हमर लाइव लोकेशन शेयर करू",name:"मैथिली"},
+sa:{label:"भाषा",w:"महिला सुरक्षा - सर्वाधिकम् आवश्यकम्",ws:"एका बालिका सुरक्षिता अस्ति चेत् सर्वः परिवारः सुरक्षितः",sos:"SOS - साहाय्यम्!",ss:"स्पर्शमात्रेण पुलिस + परिवारं प्रति स्थानं गमिष्यति",p:"पुलिसम् आह्वयतु - 112",wo:"महिला साहाय्यरेखा - 181",l:"मम जीवितं स्थानं प्रेषयतु",name:"संस्कृतम्"},
+sat:{label:"ᱯᱟᱹᱨᱥᱤ",w:"ᱠᱩᱲᱤ ᱠᱚᱣᱟᱜ ᱥᱩᱨᱚᱠᱷᱤᱭᱟᱹ - ᱡᱚᱛᱚ ᱠᱷᱚᱱ ᱞᱟᱹᱠᱛᱤ",ws:"ᱢᱤᱫ ᱠᱩᱲᱤ ᱥᱩᱨᱚᱠᱷᱤᱛ ᱠᱷᱟᱱ ᱜᱚᱴᱟ ᱜᱷᱟᱨᱚᱸᱡᱽ ᱥᱩᱨᱚᱠᱷᱤᱛ",sos:"SOS - ᱜᱚᱲᱚ!",ss:"ᱜᱚᱴᱟᱣ ᱞᱮᱠᱷᱟᱱ ᱯᱩᱞᱤᱥ + ᱜᱷᱟᱨᱚᱸᱡᱽ ᱴᱷᱮᱱ ᱴᱷᱟᱶ ᱪᱟᱞᱟᱜᱼᱟ",p:"ᱯᱩᱞᱤᱥ ᱠᱚ ᱠᱚᱞ ᱢᱮ - 112",wo:"ᱠᱩᱲᱤ ᱜᱚᱲᱚ ᱞᱟᱭᱤᱱ - 181",l:"ᱤᱧᱟᱜ ᱞᱟᱭᱤᱵᱷ ᱴᱷᱟᱶ ᱦᱟᱹᱴᱤᱧ ᱢᱮ",name:"ᱥᱟᱱᱛᱟᱲᱤ"}
 };
-function setLang(l){
-var d=T[l];
-for(var k in d){
-var el=document.getElementById(k);
-if(el){ if(el.tagName=='INPUT'||el.tagName=='TEXTAREA'){el.placeholder=d[k]} else {el.innerText=d[k]} }
+let cur='en';
+const box=document.getElementById('langBtns');
+Object.keys(T).forEach(k=>{
+let b=document.createElement('button');b.textContent=T[k].name;b.onclick=()=>setLang(k);b.id='btn-'+k;box.appendChild(b);
+});
+function setLang(k){cur=k;let d=T[k];
+document.getElementById('langLabel').textContent=d.label;
+document.getElementById('wTitle').textContent=d.w;
+document.getElementById('wSub').textContent=d.ws;
+document.getElementById('sosTxt').textContent=d.sos;
+document.getElementById('sosSub').textContent=d.ss;
+document.getElementById('policeTxt').textContent=d.p;
+document.getElementById('womenTxt').textContent=d.wo;
+document.getElementById('locTxt').textContent=d.l;
+document.querySelectorAll('.langs button').forEach(x=>x.classList.remove('active'));
+document.getElementById('btn-'+k).classList.add('active');
 }
-}
+setLang('en');
+function sos(){if(navigator.geolocation){navigator.geolocation.getCurrentPosition(p=>{let u=`https://maps.google.com/?q=${p.coords.latitude},${p.coords.longitude}`;alert(T[cur].sos+'\n'+u);window.open(`https://wa.me/?text=${encodeURIComponent('SOS HELP! I need help. My location: '+u)}`);});}else{window.location.href='tel:112';}}
+function shareLoc(){if(navigator.geolocation){navigator.geolocation.getCurrentPosition(p=>{let u=`https://maps.google.com/?q=${p.coords.latitude},${p.coords.longitude}`;window.open(`https://wa.me/?text=${encodeURIComponent('My Live Location: '+u)}`);});}else{alert('Location not available');}}
 </script>
-</body></html>
+</body>
+</html>
