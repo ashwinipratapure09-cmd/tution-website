@@ -1,1 +1,90 @@
-https://ashwinipratapure09-cmd.github.io/tution-website/
+<!DOCTYPE html>
+<html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ONE SMART LIFE</title>
+<style>
+body{margin:0;font-family:Arial;background:#6a0dad;color:white;text-align:center;padding:12px}
+.box{background:white;color:#333;border-radius:20px;padding:18px;margin:14px 0}
+h1{font-size:30px;margin:5px}
+.sos{background:red;color:white;font-size:28px;padding:18px;border:none;border-radius:50px;width:100%;font-weight:bold}
+.btn{background:#6a0dad;color:white;padding:14px;border:none;border-radius:14px;width:100%;margin:7px 0;font-size:17px;font-weight:bold}
+input,select,textarea{width:94%;padding:12px;margin:7px 0;border:2px solid #ddd;border-radius:10px;font-size:15px}
+.langbtn{background:white;color:#6a0dad;border:2px solid #6a0dad;padding:8px 10px;margin:3px;border-radius:20px;font-weight:bold}
+.langbox{background:white;border-radius:15px;padding:10px;margin-bottom:5px}
+.green{background:#25D366}.blue{background:#007bff}.orange{background:#ff6600}.red{background:red}
+</style>
+</head><body>
+
+<h1>ONE SMART LIFE</h1>
+<p id="tag1">One App. Every Problem. Smarter Solutions.</p>
+<p id="tag2">One World. One Company. One Smarter Life.</p>
+
+<div class="langbox">
+<p style="color:black;margin:5px"><b>🌍 Language / भाषा / భాష</b></p>
+<button class="langbtn" onclick="setLang('en')">English</button>
+<button class="langbtn" onclick="setLang('hi')">हिंदी</button>
+<button class="langbtn" onclick="setLang('te')">తెలుగు</button>
+<button class="langbtn" onclick="setLang('ta')">தமிழ்</button>
+<button class="langbtn" onclick="setLang('kn')">ಕನ್ನಡ</button>
+<button class="langbtn" onclick="setLang('mr')">मराठी</button>
+</div>
+
+<div class="box">
+<h2 id="t1" style="color:red">🚨 WOMEN'S SAFETY - SABSE JARURI</h2>
+<p id="t2">Ek Ladki Safe Hai To Poora Parivaar Safe Hai</p>
+<button class="sos" id="sosBtn" onclick="alert('SOS SENT! Police & Family Ko Location Gayi!')">🆘 SOS - HELP!</button>
+<p id="t3">Tap karte hi Police + Family ko Location jayegi</p>
+<button class="btn green" id="b1">📞 Call Police - 112</button>
+<button class="btn blue" id="b2">📞 Women Helpline - 181</button>
+<button class="btn orange" id="b3">📍 Share My Live Location</button>
+</div>
+
+<div class="box">
+<h2 id="t4">🚑 ACCIDENT & EMERGENCY</h2>
+<p id="t5">1 Minute Bhi Zindagi Bachata Hai</p>
+<button class="btn red" id="b4">🚑 Ambulance - 108</button>
+<button class="btn blue" id="b5">🏥 Nearest Hospital</button>
+<button class="btn orange" id="b6">🔥 Fire - 101</button>
+<input id="in1" placeholder="Apna Naam">
+<input id="in2" placeholder="Phone Number">
+<textarea id="in3" placeholder="Kya hua? Kaha hua? Likho..."></textarea>
+<button class="btn green" id="b7">SEND EMERGENCY REPORT</button>
+</div>
+
+<div class="box">
+<h2 id="t6">👧 CHILD SAFETY</h2>
+<p id="t7">Safe People Awareness</p>
+<button class="btn" id="b8">Report Unsafe Person</button>
+<button class="btn" id="b9">Child Helpline - 1098</button>
+</div>
+
+<div class="box">
+<h2 id="t8">🌾 AANE WALA HAI - NEXT 40 SERVICES</h2>
+<p>✅ Farmer - Fake Seed Verification</p>
+<p>✅ Food Support - Save Food, Feed People</p>
+<p>✅ Education & Jobs</p>
+<p>✅ Roads & Garbage</p>
+<p>✅ Aur 38 Services...</p>
+<p><b>TOTAL 43 SERVICES - Ek Hi App Me!</b></p>
+</div>
+
+<p>© ONE SMART LIFE - One World. One Company.</p>
+
+<script>
+var T={
+en:{tag1:"One App. Every Problem. Smarter Solutions.",tag2:"One World. One Company. One Smarter Life.",t1:"🚨 WOMEN'S SAFETY - MOST IMPORTANT",t2:"If One Girl Is Safe, Whole Family Is Safe",t3:"On Tap, Location Goes To Police + Family",b1:"📞 Call Police - 112",b2:"📞 Women Helpline - 181",b3:"📍 Share My Live Location",t4:"🚑 ACCIDENT & EMERGENCY",t5:"1 Minute Can Also Save A Life",b4:"🚑 Ambulance - 108",b5:"🏥 Nearest Hospital",b6:"🔥 Fire - 101",b7:"SEND EMERGENCY REPORT",t6:"👧 CHILD SAFETY",t7:"Safe People Awareness",b8:"Report Unsafe Person",b9:"Child Helpline - 1098",t8:"🌾 COMING SOON - NEXT 40 SERVICES",sosBtn:"🆘 SOS - HELP!",in1:"Your Name",in2:"Phone Number",in3:"What happened? Where? Write..."},
+hi:{tag1:"Ek App. Har Samasya. Smart Samadhan.",tag2:"Ek Duniya. Ek Company. Ek Smart Zindagi.",t1:"🚨 MAHILA SURAKSHA - SABSE JARURI",t2:"Ek Ladki Safe Hai To Poora Parivaar Safe Hai",t3:"Tap Karte Hi Police + Family Ko Location Jayegi",b1:"📞 Police Ko Call Karo - 112",b2:"📞 Mahila Helpline - 181",b3:"📍 Meri Live Location Bhejo",t4:"🚑 DURGHATNA & EMERGENCY",t5:"1 Minute Bhi Zindagi Bacha Sakta Hai",b4:"🚑 Ambulance - 108",b5:"🏥 Nazdeeki Hospital",b6:"🔥 Fire - 101",b7:"EMERGENCY REPORT BHEJO",t6:"👧 BACHHO KI SURAKSHA",t7:"Safe Logon Ki Pehchan",b8:"Unsafe Vyakti Ki Report Karo",b9:"Bachho Ki Helpline - 1098",t8:"🌾 AANE WALA HAI - AGLE 40 SERVICES",sosBtn:"🆘 SOS - MADAD!",in1:"Apna Naam",in2:"Phone Number",in3:"Kya Hua? Kaha Hua? Likho..."},
+te:{tag1:"Oka App. Prati Samasya. Smart Pariskaram.",tag2:"Oka Prapancham. Oka Company. Oka Smart Jeevitam.",t1:"🚨 MAHILA BHADRATA - ATYANTA MUKHYAM",t2:"Oka Ammayi Safe Ga Unte, Kuthumbam Antha Safe",t3:"Tap Cheyagane Police + Family Ki Location Veltundi",b1:"📞 Police Ki Call Cheyandi - 112",b2:"📞 Mahila Helpline - 181",b3:"📍 Naa Live Location Pampandi",t4:"🚑 PRA MADAM & EMERGENCY",t5:"1 Nimisham Kuda Pranam Kapatagaladu",b4:"🚑 Ambulance - 108",b5:"🏥 Daggari Hospital",b6:"🔥 Fire - 101",b7:"EMERGENCY REPORT PAMPANDI",t6:"👧 PILLALA BHADRATA",t7:"Safe Manushula Gurinchi Telusukondi",b8:"Unsafe Manishi Gurinchi Report Cheyandi",b9:"Pillala Helpline - 1098",t8:"🌾 RAVABOTHUNDI - TARUVATA 40 SERVICES",sosBtn:"🆘 SOS - SAHAYAM!",in1:"Mee Peru",in2:"Phone Number",in3:"Em Jarigindi? Ekkada? Rayandi..."},
+ta:{tag1:"Oru App. Ella Prachanaigalum. Smart Theervu.",tag2:"Oru Ulagam. Oru Company. Oru Smart Vazhkai.",t1:"🚨 PENGAL PATHUKAPPU - MIGA MUKKIYAM",t2:"Oru Penn Safe Na, Kudumbam Muzhuvathum Safe",t3:"Tap Seithaal Police + Family Ku Location Pogum",b1:"📞 Police Ku Call - 112",b2:"📞 Pengal Helpline - 181",b3:"📍 En Live Location Anuppu",t4:"🚑 VIBATHU & EMERGENCY",t5:"1 Nimidam Kooda Uyirai Kappatralam",b4:"🚑 Ambulance - 108",b5:"🏥 Pakkathu Hospital",b6:"🔥 Fire - 101",b7:"EMERGENCY REPORT ANUPPU",t6:"👧 KUZHANTHAI PATHUKAPPU",t7:"Safe Makkal Patri Therinthu Kol",b8:"Unsafe Nabar Patri Report Sei",b9:"Kuzhanthai Helpline - 1098",t8:"🌾 VARAPOGIRATHU - ADUTHA 40 SERVICES",sosBtn:"🆘 SOS - UTHAVI!",in1:"Ungal Peyar",in2:"Phone Number",in3:"Enna Nachanthu? Enge? Ezhuthu..."},
+kn:{tag1:"Ondu App. Prati Samasye. Smart Parihara.",tag2:"Ondu Jaga. Ondu Company. Ondu Smart Jeevana.",t1:"🚨 MAHILA SURAKSHA - ATYANT MUKHYA",t2:"Obba Hudugi Safe Idre, Ida Kutumba Safe",t3:"Tap Madidare Police + Family Ge Location Hogutte",b1:"📞 Police Ge Call - 112",b2:"📞 Mahila Helpline - 181",b3:"📍 Nanna Live Location Kalu",t4:"🚑 APAGHATA & EMERGENCY",t5:"1 Nimisha Kuda Jeeva Ulisabahudu",b4:"🚑 Ambulance - 108",b5:"🏥 Hatrada Hospital",b6:"🔥 Fire - 101",b7:"EMERGENCY REPORT KALU",t6:"👧 MAKKALA SURAKSHA",t7:"Safe Janara Bagge Tiliyiri",b8:"Unsafe Vyaktina Report Madi",b9:"Makkala Helpline - 1098",t8:"🌾 BARUTTIDE - MUNDINA 40 SERVICES",sosBtn:"🆘 SOS - SAHAYA!",in1:"Nimma Hesaru",in2:"Phone Number",in3:"Enayitu? Ellide? Bari..."},
+mr:{tag1:"Ek App. Pratyek Samasya. Smart Upay.",tag2:"Ek Jag. Ek Company. Ek Smart Ayushya.",t1:"🚨 MAHILA SURAKSHA - SARVAT JARURI",t2:"Ek Mulgi Safe Asel Tar Akkha Kutumb Safe",t3:"Tap Kelyavar Police + Family La Location Jail",b1:"📞 Police La Call Kara - 112",b2:"📞 Mahila Helpline - 181",b3:"📍 Majhi Live Location Pathva",t4:"🚑 APGHAT & EMERGENCY",t5:"1 Minute Suddha Jeev Vachvu Shakto",b4:"🚑 Ambulance - 108",b5:"🏥 Jawalche Hospital",b6:"🔥 Fire - 101",b7:"EMERGENCY REPORT PATHVA",t6:"👧 MULANCHI SURAKSHA",t7:"Safe Lokanchi Olakh",b8:"Unsafe Vyaktichi Takrar Kara",b9:"Mulanchi Helpline - 1098",t8:"🌾 YET AAHE - PUDHIL 40 SERVICES",sosBtn:"🆘 SOS - MADAT!",in1:"Tumche Naav",in2:"Phone Number",in3:"Kay Jhal? Kuthe? Liha..."}
+};
+function setLang(l){
+var d=T[l];
+for(var k in d){
+var el=document.getElementById(k);
+if(el){ if(el.tagName=='INPUT'||el.tagName=='TEXTAREA'){el.placeholder=d[k]} else {el.innerText=d[k]} }
+}
+}
+</script>
+</body></html>
